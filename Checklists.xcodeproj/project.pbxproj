@@ -62,13 +62,11 @@
 			children = (
 				4E63B58C26D4186900B79392 /* AppDelegate.swift */,
 				4E63B58E26D4186900B79392 /* SceneDelegate.swift */,
-				4E63B59026D4186900B79392 /* ChecklistViewController.swift */,
+				4E63B5A626D4475D00B79392 /* Controllers */,
 				4E63B5A226D442AE00B79392 /* Model */,
-				4E63B59226D4186900B79392 /* Main.storyboard */,
+				4E63B5A526D4475200B79392 /* Views */,
 				4E63B59526D4186B00B79392 /* Assets.xcassets */,
-				4E63B59726D4186B00B79392 /* LaunchScreen.storyboard */,
 				4E63B59A26D4186B00B79392 /* Info.plist */,
-				4E63B5A326D4473000B79392 /* AddItemViewController.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -79,6 +77,24 @@
 				4E63B5A026D43E3C00B79392 /* ChecklistItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4E63B5A526D4475200B79392 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E63B59226D4186900B79392 /* Main.storyboard */,
+				4E63B59726D4186B00B79392 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E63B5A626D4475D00B79392 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4E63B59026D4186900B79392 /* ChecklistViewController.swift */,
+				4E63B5A326D4473000B79392 /* AddItemViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
