@@ -8,6 +8,13 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController {
+  // MARK: - Variables
+  let row0text = "Walk the dog"
+  let row1text = "Brush teeth"
+  let row2text = "Learn iOS development"
+  let row3text = "Soccer practice"
+  let row4text = "Eat ice cream"
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
