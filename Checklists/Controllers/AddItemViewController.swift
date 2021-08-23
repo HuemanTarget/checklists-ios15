@@ -8,13 +8,21 @@
 import UIKit
 
 class AddItemViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      navigationItem.largeTitleDisplayMode = .never
-
-    }
+  
+  // MARK: - Outlets
+  @IBOutlet weak var textField: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    navigationItem.largeTitleDisplayMode = .never
+    
+  }
+  
+  // MARK: - Table View Delegates
+  override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    return nil
+  }
   
   // MARK: - Actions
   @IBAction func cancel() {
@@ -24,5 +32,5 @@ class AddItemViewController: UITableViewController {
   @IBAction func done() {
     navigationController?.popViewController(animated: true)
   }
-
+  
 }
