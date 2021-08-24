@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
   // MARK: - Variables
   var items = [ChecklistItem]()
   
@@ -65,6 +65,21 @@ class ChecklistViewController: UITableViewController {
     label.text = item.text
   }
   
+  // MARK: - Navigation
+  override func prepare(
+    for segue: UIStoryboardSegue,
+    sender: Any?
+  ) {
+    // 1
+    if segue.identifier == "AddItem" {
+      // 2
+      let controller = segue.destination as! AddItemViewController
+      // 3
+      controller.delegate = self
+    }
+  }
+
+  
   
   // MARK: - Table View Number Of Rows
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,6 +118,28 @@ class ChecklistViewController: UITableViewController {
     tableView.deleteRows(at: indexPaths, with: .automatic)
     
   }
+  
+  // MARK: - Add Item ViewController Delegates
+  func addItemViewControllerDidCancel(
+    _ controller: AddItemViewController
+  ) {
+    navigationController?.popViewController(animated: true)
+  }
+
+  func addItemViewController(
+    _ controller: AddItemViewController,
+    didFinishAdding item: ChecklistItem
+  ) {
+    let newRowIndex = items.count
+    items.append(item)
+
+    let indexPath = IndexPath(row: newRowIndex, section: 0)
+    let indexPaths = [indexPath]
+    tableView.insertRows(at: indexPaths, with: .automatic)
+    navigationController?.popViewController(animated:true)
+  }
+
+
   
   // MARK: - Actions
   @IBAction func addItems() {
